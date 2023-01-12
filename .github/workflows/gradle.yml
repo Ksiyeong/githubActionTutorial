@@ -33,7 +33,7 @@ jobs:
       run: chmod +x /root/actions-runner/_work/githubActionTutorial/githubActionTutorial/server/linode-github-action-test/gradlew
 
     - name: 환경변수 설정
-      run: export TEST_NAME=${{secrets.TEST_NAME_REPO}}
+      run: export TEST_NAME=SIBAL222
 
     - name: build # 경로를 직접 설정하여 빌드 명령을 내려준다.
       run: /root/actions-runner/_work/githubActionTutorial/githubActionTutorial/server/linode-github-action-test/gradlew build
