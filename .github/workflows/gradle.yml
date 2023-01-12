@@ -28,7 +28,18 @@ jobs:
       with:
         java-version: '11'
         distribution: 'temurin'
-    - name: Build with Gradle
-      uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
-      with:
-        arguments: build
+
+    - name: Grand execute permission for gradlew # permission 에러가 발생할 경우
+      run: chmod +x /root/actions-runner/_work/githubActionTutorial/githubActionTutorial/server/linode-github-action-test/gradlew
+
+    - name: 환경변수 설정
+      working-directory: ./server/linode-github-action-test
+      env:
+        TEST_NAME: ${{secrets.TEST_NAME_REPO}}
+
+    - name: build # 경로를 직접 설정하여 빌드 명령을 내려준다.
+      run: /gradlew build
+      working-directory: ./server/linode-github-action-test
+
+    - name: Execute Jar File
+      run: sudo kill -9 `sudo lsof -t -i:8080` & sudo java -jar /root/actions-runner/_work/githubActionTutorial/githubActionTutorial/server/linode-github-action-test/build/libs/linode-github-action-test-0.0.1-SNAPSHOT.jar &
