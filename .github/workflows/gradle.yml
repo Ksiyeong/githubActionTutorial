@@ -36,7 +36,7 @@ jobs:
       run: export TEST_NAME=${{secrets.TEST_NAME_REPO}}
 
     - name: build # 경로를 직접 설정하여 빌드 명령을 내려준다.
-      run: /gradlew build
+      run: ./gradlew build
       working-directory: ./server/linode-github-action-test
 
     - name: Execute Jar File
