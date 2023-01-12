@@ -34,6 +34,7 @@ jobs:
 
     - name: 환경변수 설정
       run: export TEST_NAME=SIBAL222
+      working-directory: ./server/linode-github-action-test
 
     - name: build # 경로를 직접 설정하여 빌드 명령을 내려준다.
       run: /root/actions-runner/_work/githubActionTutorial/githubActionTutorial/server/linode-github-action-test/gradlew build
