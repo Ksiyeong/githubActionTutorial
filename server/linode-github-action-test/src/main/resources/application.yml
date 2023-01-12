@@ -1,4 +1,5 @@
 server:
   port: 8080
 my:
-  name: ${TEST_NAME}
+#  name: ${TEST_NAME}
+  name: SIBAL
