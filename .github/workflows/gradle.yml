@@ -34,7 +34,6 @@ jobs:
 
     - name: 환경변수 설정
       uses: getsentry/action-release@v1
-      working-directory: ./server/linode-github-action-test
       env:
         TEST_NAME: ${{secrets.TEST_NAME_REPO}}
 
