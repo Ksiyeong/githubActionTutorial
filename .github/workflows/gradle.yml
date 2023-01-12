@@ -32,8 +32,12 @@ jobs:
     - name: Grand execute permission for gradlew # permission 에러가 발생할 경우
       run: chmod +x /root/actions-runner/_work/githubActionTutorial/githubActionTutorial/server/linode-github-action-test/gradlew
 
-    - name: 환경변수 설정
-      run: export TEST_NAME=SIBAL222
+    - name: 환경변수 설정 1
+      run: touch ./src/main/resources/application.yml
+      working-directory: ./server/linode-github-action-test
+
+    - name: 환경변수 설정 2
+      run: echo "${{ secrets.MY_APPLICATION_YML}}" > ./src/main/resources/application.yml
       working-directory: ./server/linode-github-action-test
 
     - name: build # 경로를 직접 설정하여 빌드 명령을 내려준다.

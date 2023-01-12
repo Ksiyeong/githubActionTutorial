@@ -1,5 +1,2 @@
-server:
-  port: 8080
 my:
-  name: ${TEST_NAME}
-#  name: SIBAL
+  name: ??
